@@ -35,7 +35,7 @@
       </div>
       <section class="filtered-products">
         {#each filterPlants as plant}
-        <PlantLarge 
+        <PlantLarge
             price={plant.price} 
             name={plant.name} 
             image={plant.image}
