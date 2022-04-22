@@ -1,4 +1,5 @@
 <script>
+    import { Router, Route, Link } from "svelte-navigator";
     import Header from "./../components/Header.svelte";
     import PlantLarge from "./../components/PlantLarge.svelte";
     import PlantSmall from "./../components/PlantSmall.svelte";
@@ -34,29 +35,38 @@
         </div>
       </div>
       <section class="filtered-products">
+        <Router>
         {#each filterPlants as plant}
-        <PlantLarge
-            price={plant.price} 
-            name={plant.name} 
-            image={plant.image}
-            />
+        <Link to="product/{plant.name}">
+            <PlantLarge
+                price={plant.price} 
+                name={plant.name} 
+                image={plant.image}
+                />
+        </Link>
         {/each}
+        </Router>
     </section>
     <section class="trending-week background-secondary">
         <h2 class="margin-unset margin-bottom-small">Trending this week</h2>
         <div class="trending-week-list">
             {#each trendingPlants as plant}
-            <PlantSmall 
-                price={plant.price} 
-                name={plant.name} 
-                image={plant.image}
-                />
+            
+                <PlantSmall 
+                    price={plant.price} 
+                    name={plant.name} 
+                    image={plant.image}
+                    />
+           
             {/each}
         </div>
     </section>
   </div>
 
   <style>
+      .home {
+          padding-top: 90px;
+      }
       .filter-list {
           display: flex;
           flex-wrap: nowrap;

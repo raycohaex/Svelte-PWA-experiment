@@ -22,10 +22,12 @@ body {
 	flex-direction: column;
 	flex-wrap: wrap;
 	padding: 0 30px;
+	font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Merriweather";
+	outline: none;
 }
 
 h1 {
@@ -38,6 +40,11 @@ h2 {
 	line-height: 1.5rem;
 }
 
+h3 {
+	font-size: 1rem;
+	line-height: 1rem;
+}
+
 .gradient {
 	background: rgb(73,139,105);
 	background: -moz-linear-gradient(180deg, rgba(73,139,105,1) 0%, rgba(101,194,139,1) 100%);
@@ -45,7 +52,18 @@ h2 {
 	background: linear-gradient(180deg, rgba(73,139,105,1) 0%, rgba(101,194,139,1) 100%);
 }
 
+.button {
+	background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
 
+.button.icon-button {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .background-primary {
 	background: rgb(73,139,105);
@@ -67,6 +85,10 @@ h2 {
 
 .margin-bottom-small {
 	margin-bottom: 16px;
+}
+
+.margin-top-auto {
+	margin-top: auto;
 }
 
 main {
